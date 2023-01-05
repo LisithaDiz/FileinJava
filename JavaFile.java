@@ -104,7 +104,8 @@ public class JavaFile {
                     sSize=sciNam.size();
                     while (sSize>0){
                         --sSize;
-                        myFile.write(sciNam.get(i)+"     "+ sciFinal.get(i)+"        "+df.format(sciAvg.get(i))+"      "+sciGrade.get(i)+"\n");
+                        line=String.format("| %-55s |%-19s |%-24s|%-24s%n",sciNam.get(i),df.format(sciFinal.get(i)),df.format(sciAvg.get(i)),sciGrade.get(i));
+                        myFile.write(line);
                         i++;
                     }
 
@@ -118,7 +119,8 @@ public class JavaFile {
                     eSize=engNam.size();
                     while (eSize>0){
                        --eSize;
-                        myFile.write(engNam.get(i)+"     "+ engFinal.get(i)+"        "+df.format(engAvg.get(i))+"      "+engGrade.get(i)+"\n");
+                        line=String.format("| %-55s |%-19s |%-24s|%-24s%n",engNam.get(i),df.format(engFinal.get(i)),df.format(engAvg.get(i)),engGrade.get(i));
+                        myFile.write(line);
                         i++;
                     }
                 }else {
