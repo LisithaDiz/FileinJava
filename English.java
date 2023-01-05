@@ -37,7 +37,7 @@ public class English {
     }
     public void engMarks()   {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter marks (term_Paper mid_Term final_Exam) ");
+        System.out.println("Enter marks (term_Paper   mid_Term   final_Exam) ");
         termPaper=in.nextDouble();
         midterm=in.nextDouble();
         finalExam=in.nextDouble();
