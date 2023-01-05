@@ -39,7 +39,7 @@ public class Science {
 
     public void sciMarks()   {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter marks ( attendance project midterm final_Exam) ");
+        System.out.println("Enter marks ( attendance   project   midterm   final_Exam) ");
         attendance=in.nextDouble();
         project=in.nextDouble();
         midterm=in.nextDouble();
