@@ -15,6 +15,8 @@ public class JavaFile {
         int A=0,B=0,C=0,D=0,F=0;
         DecimalFormat df = new DecimalFormat("##.##");
         Scanner in = new Scanner(System.in);
+        System.out.println("Enter the file name with '.txt' extension");
+        String nameOfFile=in.nextLine();
         System.out.println("Enter the number of students ");
         int numOfStudents=in.nextInt();
 
@@ -80,11 +82,11 @@ public class JavaFile {
             }
 
         try {
-            FileWriter myFile = new FileWriter("GradeAverage.txt");
+            FileWriter myFile = new FileWriter(nameOfFile);
             myFile.write("Student Performance Summary");
             myFile.write("\n___________________________");
             myFile.write("\n");
-            myFile.write("Student Name                                              Final Exam            Final Average            Grade");
+            myFile.write("Student Name                                              Final Exam            Final Average             Grade");
             myFile.write("\n________________________________________________________________________________________________________________");
 
                 if (M){
@@ -103,7 +105,7 @@ public class JavaFile {
                         } else {
                             F++;
                         }
-                        line=String.format("| %-55s |%-19s |%-24s|%-25s%n",mathNam.get(i),df.format(mathFinal.get(i)),df.format(mathAvg.get(i)),mathGrade.get(i));
+                        line=String.format("%-57s |%-21s|%-25s|%-24s%n",mathNam.get(i),df.format(mathFinal.get(i)),df.format(mathAvg.get(i)),mathGrade.get(i));
                         myFile.write(line);
                         i++;
                     }
@@ -127,7 +129,7 @@ public class JavaFile {
                         } else {
                             F++;
                         }
-                        line=String.format("| %-55s |%-19s |%-24s|%-24s%n",sciNam.get(i),df.format(sciFinal.get(i)),df.format(sciAvg.get(i)),sciGrade.get(i));
+                        line=String.format("%-57s |%-21s|%-25s|%-24s%n",sciNam.get(i),df.format(sciFinal.get(i)),df.format(sciAvg.get(i)),sciGrade.get(i));
                         myFile.write(line);
                         i++;
                     }
