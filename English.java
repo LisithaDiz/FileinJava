@@ -1,21 +1,13 @@
-import java.io.IOException;
 import java.util.Scanner;
-import  java.io.FileWriter;
 public class English {
-    private double a,b,c;
-    public double avgE(double termPaper, double midterm, double finalExam){
+    private double termPaper,midterm,finalExam;
+    public double avgE(){
         double termPaper_1=termPaper/100*30;
         double midterm_1=midterm/100*30;
         double final_E=finalExam/100*30;
         double avg=termPaper_1+midterm_1+final_E;
         return avg;
     }
-
-    public  String name(String firstName, String lastName){
-        String fullName=firstName+" "+ lastName.replace(',',' ');
-        return fullName;
-    }
-
     public String grade(double avg){
         String gradeABC;
         if (avg>=90){
@@ -33,19 +25,22 @@ public class English {
     }
 
 
-    public void engFinal() throws IOException {
+
+
+
+    public double getFinalEx(){
+        return this.finalExam;
+    }
+    public  String name(String firstName, String lastName){
+        String fullName=firstName+" "+ lastName.replace(',',' ');
+        return fullName;
+    }
+    public void engMarks()   {
         Scanner in = new Scanner(System.in);
-        a=in.nextDouble();
-        b=in.nextDouble();
-        c=in.nextDouble();
-
-        English objE=new English();
-        double avgEE=objE.avgE(a,b,c);
-        String gradeEE =objE.grade(avgEE);
-        FileWriter myFile = new FileWriter("GradeAverage.txt");
-        String line=c+avgEE+gradeEE;
-        myFile.write(line);
-
+        System.out.println("Enter marks ");
+        termPaper=in.nextDouble();
+        midterm=in.nextDouble();
+        finalExam=in.nextDouble();
     }
 
 }
