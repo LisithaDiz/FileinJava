@@ -38,7 +38,7 @@ public class Math {
       }
       public void mathMarks() {
             Scanner in = new Scanner(System.in);
-            System.out.println("Enter marks ");
+            System.out.println("Enter marks (quiz_1 quiz_2 quiz_3 quiz_4 quiz_5 test_1 test_2 final_Exam) ");
             quiz1=in.nextDouble();
             quiz2=in.nextDouble();
             quiz3=in.nextDouble();
