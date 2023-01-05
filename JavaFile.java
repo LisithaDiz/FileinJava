@@ -12,6 +12,7 @@ public class JavaFile {
         String line;
         int mSize, sSize, eSize;
         int i=0, j=0, k=0;
+        int A=0,B=0,C=0,D=0,F=0;
         DecimalFormat df = new DecimalFormat("##.##");
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the number of students ");
@@ -91,7 +92,18 @@ public class JavaFile {
                     mSize=mathNam.size();
                     while (mSize>0){
                         --mSize;
-                        line=String.format("| %-55s |%-19s |%-24s|%-24s%n",mathNam.get(i),df.format(mathFinal.get(i)),df.format(mathAvg.get(i)),mathGrade.get(i));
+                        if(mathGrade.get(i)=="A"){
+                            A++;
+                        }else if(mathGrade.get(i)=="B"){
+                            B++;
+                        }else if(mathGrade.get(i)=="C"){
+                            C++;
+                        }else if(mathGrade.get(i)=="D"){
+                            D++;
+                        } else {
+                            F++;
+                        }
+                        line=String.format("| %-55s |%-19s |%-24s|%-25s%n",mathNam.get(i),df.format(mathFinal.get(i)),df.format(mathAvg.get(i)),mathGrade.get(i));
                         myFile.write(line);
                         i++;
                     }
@@ -104,6 +116,17 @@ public class JavaFile {
                     sSize=sciNam.size();
                     while (sSize>0){
                         --sSize;
+                        if(sciGrade.get(i)=="A"){
+                            A++;
+                        }else if(sciGrade.get(i)=="B"){
+                            B++;
+                        }else if(sciGrade.get(i)=="C"){
+                            C++;
+                        }else if(sciGrade.get(i)=="D"){
+                            D++;
+                        } else {
+                            F++;
+                        }
                         line=String.format("| %-55s |%-19s |%-24s|%-24s%n",sciNam.get(i),df.format(sciFinal.get(i)),df.format(sciAvg.get(i)),sciGrade.get(i));
                         myFile.write(line);
                         i++;
@@ -119,17 +142,36 @@ public class JavaFile {
                     eSize=engNam.size();
                     while (eSize>0){
                        --eSize;
-                        line=String.format("| %-55s |%-19s |%-24s|%-24s%n",engNam.get(i),df.format(engFinal.get(i)),df.format(engAvg.get(i)),engGrade.get(i));
+                        if(engGrade.get(i)=="A"){
+                            A++;
+                        }else if(engGrade.get(i)=="B"){
+                            B++;
+                        }else if(engGrade.get(i)=="C"){
+                            C++;
+                        }else if(engGrade.get(i)=="D"){
+                            D++;
+                        } else {
+                            F++;
+                        }
+                        line=String.format("%-57s |%-21s|%-25s|%-24s%n",engNam.get(i),df.format(engFinal.get(i)),df.format(engAvg.get(i)),engGrade.get(i));
                         myFile.write(line);
                         i++;
                     }
                 }else {
                 }
-
-            myFile.close();
+                myFile.write("\nGrade Distribution \n");
+                myFile.write("================== \n");
+                myFile.write("A----------"+A+"\n");
+                myFile.write("B----------"+B+"\n");
+                myFile.write("C----------"+C+"\n");
+                myFile.write("D----------"+D+"\n");
+                myFile.write("F----------"+F+"\n");
+                
+                myFile.close();
         }catch (Exception ee){
             System.out.println(ee);
             ee.fillInStackTrace();
         }
     }
+
 }
