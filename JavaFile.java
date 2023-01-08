@@ -80,6 +80,8 @@ public class JavaFile {
                     break;
                 default:
                     System.out.println("Subject you enter is Wrong run the Programme again !!!");
+                    break;
+
             }
         }
 
