@@ -4,7 +4,7 @@ public class English {
     public double avgE(){
         double termPaper_1=termPaper/100*30;
         double midterm_1=midterm/100*30;
-        double final_E=finalExam/100*30;
+        double final_E=finalExam/100*40;
         double avg=termPaper_1+midterm_1+final_E;
         return avg;
     }
